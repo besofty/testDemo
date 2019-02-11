@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="com.yu.softy.testdemo.mybatis.util.MybatisGeneratorPlugin"/>
+        <commentGenerator type="com.yu.softy.testdemo.mybatis.util.MybatisGeneratorPlugin$CommentGenerator"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.100.20.14:3306/fuqiqianbao2018_09_07?useUnicode=true" userId="root"
+                        password="root">
+        </jdbcConnection>
+        <javaTypeResolver type="com.yu.softy.testdemo.mybatis.util.MybatisGeneratorPlugin$LocalDateTimeTypeResolver">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="${dalPackage}.dataobject" targetProject="${projectRoot}/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="${dalPackage}.mapper" targetProject="${projectRoot}/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${dalPackage}.mapper" targetProject="${projectRoot}/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+        <table tableName="%" enableCountByExample="false" enableUpdateByExample="false" modelType="FLAT"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"
+               enableDeleteByPrimaryKey="false">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+            <domainObjectRenamingRule searchString="^Track" replaceString=""/>
+        </table>
+    </context>
+</generatorConfiguration>
