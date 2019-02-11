@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TalkingData {
 
-    private static final String ACCESS_KEY = "13d38156a4eb0301da5a3cda1025038c";
+    private static final String ACCESS_KEY = "ACCESS_KEY";
     private static final String URL = "https://api.talkingdata.com/metrics/app/v1";
     private static final RestTemplate restTemplate = new RestTemplate();
 
