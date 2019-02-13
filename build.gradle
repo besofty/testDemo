@@ -35,6 +35,8 @@ dependencies {
     compile 'org.apache.poi:poi:3.14'
     compile 'org.apache.poi:poi-ooxml:3.14'
 
+    compile group: 'org.apache.rocketmq', name: 'rocketmq-client', version: '4.3.1'
+
     /**
      * feign
      */

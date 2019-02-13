@@ -3,3 +3,20 @@ spring:
         name: test
 server:
     port: 8080
+
+rocketmq:
+    producer:
+        isOnOff: on
+        groupName: ${spring.application.name}   #发送同一类消息的设置为同一个group，保证唯一,默认不需要设置，rocketmq会使用ip@pid(pid代表jvm名字)作为唯一标示
+        namesrvAddr: 127.0.0.1:9876
+        maxMessageSize: 4096
+        sendMsgTimeout: 3000
+        retryTimesWhenSendFailed: 3
+    consumer:
+        isOnOff: on
+        groupName: ${spring.application.name}
+        namesrvAddr: 127.0.0.1:9876
+        topics: astarte-client~*;
+        consumeThreadMin: 20
+        consumeThreadMax: 64
+        consumeMessageBatchMaxSize: 1
